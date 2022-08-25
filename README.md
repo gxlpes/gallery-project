@@ -1,4 +1,4 @@
-# gallery-project
+# Gallery Project
 Gallery project created to integrate Firebase with TypeScript/React, using the Firebase to store user data as photos/pictures receiving via input.
 
 Tech used: 
