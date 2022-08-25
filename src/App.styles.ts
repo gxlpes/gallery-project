@@ -25,11 +25,46 @@ export const ScreenLoading = styled.div`
   .emoji {
     margin-bottom: 1rem;
     font-size: 2rem;
+    animation: cycle 0.2s infinite ease-in-out;
+
+    @keyframes cycle {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 `;
 
 export const PhotoList = styled.div`
-  display: grid;
-  grid-template-columns: repeat() (4, 1fr);
-  gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 1rem;
+`;
+
+export const UploadForm = styled.form`
+  background-color: #633593;
+  padding: 1rem;
+  border-radius: 5px;
+
+  input[type="submit"] {
+    background-color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  button {
+    background-color: #9450de;
+  }
 `;
