@@ -18,3 +18,18 @@ export const Header = styled.h1`
   text-align: center;
   margin-bottom: 10rem;
 `;
+
+export const ScreenLoading = styled.div`
+  text-align: center;
+
+  .emoji {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+`;
+
+export const PhotoList = styled.div`
+  display: grid;
+  grid-template-columns: repeat() (4, 1fr);
+  gap: 0.5rem;
+`;
