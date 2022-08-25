@@ -27,7 +27,16 @@ const App = () => {
     // verify if there is a file
     if (file && file.size > 0) {
       setUploading(true);
+      let result = await Photos.insertPhotos(file);
       setUploading(false);
+
+      if (result instanceof Error) {
+        alert(`${result.name} - ${result.message}`);
+      } else {
+        let newPhotoList = [...photos];
+        newPhotoList.push(result);
+        setPhotos(newPhotoList);
+      }
     }
   };
 
@@ -39,6 +48,7 @@ const App = () => {
         <C.UploadForm method="POST" onSubmit={FormSubmithandler}>
           <input type="file" name="image" />
           <input type="submit" value="Send" />
+          {uploading && "Enviando..."}
         </C.UploadForm>
 
         {loading && (
